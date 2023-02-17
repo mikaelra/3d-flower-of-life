@@ -3,7 +3,7 @@ import math
 from matplotlib.pyplot import *
 
 # functions
-def Sphere (x0 = 0, y0 = 0, z0 = 0, r = 0, n = 6):
+def Sphere (x0 = 0, y0 = 0, z0 = 0, r = 1, n = 6):
     # Returns x,y,z coordinates for a sphere with radius (r)
     # from point (x0,y0,z0)
 
@@ -17,9 +17,9 @@ def Sphere (x0 = 0, y0 = 0, z0 = 0, r = 0, n = 6):
         thetai = 2*i*math.pi/n
         for j in range(n):
             thetaj = 2*j*math.pi/n
-            x.append(math.sin(thetai)*math.cos(thetaj))
-            y.append(math.sin(thetai)*math.sin(thetaj))
-            z.append(math.cos(thetai))
+            x.append(x0 + r*math.sin(thetai)*math.cos(thetaj))
+            y.append(y0 + r*math.sin(thetai)*math.sin(thetaj))
+            z.append(z0 + r*math.cos(thetai))
             
     
     return [x, y, z]
